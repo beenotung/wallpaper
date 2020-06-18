@@ -1,0 +1,9 @@
+# npm
+node_modules/
+pnpm-lock.yaml
+
+# ide
+.idea/
+
+# personal config
+config.js

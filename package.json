@@ -1,0 +1,16 @@
+{
+  "name": "wallpaper",
+  "version": "1.0.0",
+  "description": "auto set wallpaper according to different time",
+  "main": "main.js",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "Beeno Tung",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+  },
+  "dependencies": {
+    "cron": "^1.8.2"
+  }
+}
