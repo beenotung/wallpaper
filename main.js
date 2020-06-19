@@ -12,7 +12,7 @@ config.slots.forEach(slot => {
 })
 
 function setWallpaper(file) {
-  let res = execSync(`feh --bg-scale "${file}"`).toString()
+  let res = execSync(`feh --bg-scale ${JSON.stringify(file)}`).toString()
   if (res) {
     console.log('res:', res)
   }
