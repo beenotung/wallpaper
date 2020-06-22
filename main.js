@@ -3,6 +3,7 @@ let { execSync } = require('child_process')
 let { CronJob } = require('cron')
 
 let config = require('./config')
+let lastFile = ''
 
 setWallpaper(config.default)
 config.slots.forEach(slot => {
@@ -11,7 +12,12 @@ config.slots.forEach(slot => {
   })
 })
 
+
 function setWallpaper(file) {
+  if (file === lastFile) {
+    return
+  }
+  lastFile = file
   let res = execSync(`feh --bg-scale ${JSON.stringify(file)}`).toString()
   if (res) {
     console.log('res:', res)
@@ -20,7 +26,7 @@ function setWallpaper(file) {
 
 function runJob(
   {
-    second = '*',
+    second = '0',
     minute = '*',
     hour = '*',
     day_of_month = '*',
